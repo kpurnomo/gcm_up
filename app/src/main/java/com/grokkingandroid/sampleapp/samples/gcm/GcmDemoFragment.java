@@ -205,6 +205,19 @@ public class GcmDemoFragment extends DemoBaseFragment implements
       Intent msgIntent = new Intent(getActivity(), GcmIntentService.class);
       msgIntent.setAction(Constants.ACTION_ECHO);
       String msg;
+      String message[] = {"Hello", "world", "cse 110", "AAAAYYYY"};
+
+      /* For showing messages sequentially
+
+      for(int i =0; i < 4; i++) {
+         msg = message[i];
+         String msgTxt = getString(R.string.msg_sent, msg);
+         Crouton.showText(getActivity(), msgTxt, Style.INFO);
+         msgIntent.putExtra(Constants.KEY_MESSAGE_TXT, msg);
+         getActivity().startService(msgIntent);
+      }
+       */
+
       if (!TextUtils.isEmpty(mTxtMsg.getText())) {
          msg = mTxtMsg.getText().toString();
          mTxtMsg.setText("");
